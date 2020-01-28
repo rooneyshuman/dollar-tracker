@@ -8,8 +8,8 @@
 | ------------- | ------------- |
 | HTML5  | Python |
 | CSS3  | Flask |
-| Materialize | |
-| Jinja |  |
+| Materialize | [Plaid API](https://plaid.com/) |
+| Jinja | [pyEX](https://github.com/timkpaine/pyEX) |j
 
 ## Dependencies
 
