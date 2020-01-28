@@ -1,14 +1,15 @@
 # Dashboard Application
 
-> Short description of project.
+> Displays  a user’s personal financial transactions, links bank accounts, stock news, and tracks investment information such as stock prices. 
 
 ## Built With
 
 | Frontend  | Backend |
 | ------------- | ------------- |
-| HTML5  |  |
-| CSS3  |  |
-| Bootstrap 4  |  |
+| HTML5  | Python |
+| CSS3  | Flask |
+| Materialize | |
+| Jinja |  |
 
 ## Dependencies
 
@@ -16,7 +17,7 @@
 
 ## Deployment
 
-Deployed to: 
+Deployed to via Heroku 
 
 ## Configuration Variables
 
