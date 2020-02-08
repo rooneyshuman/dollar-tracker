@@ -1,8 +1,9 @@
-$main-color: #293462; //rgb(41, 52, 98)
-$main-color-dark: #565D90; //rgb(86, 93, 144)
-$main-color-light: #000E37; //rgb(0, 14, 55)
-
-$complementary-color: #216583; //rgb(33, 101, 131)
+@import "components/color-variables";
+$primary-color: #293462; //rgb(41, 52, 98)
+$primary-color-light: #565D90; //rgb(86, 93, 144)
+$primary-color-dark:#000E37; //rgb(0, 14, 55)
+$secondary-color: #216583; //rgb(33, 101, 131)
+@import "materialize";
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -10,4 +11,8 @@ html {
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Roboto Slab', serif;
+}
+
+.main {
+  color: blue;
 }
