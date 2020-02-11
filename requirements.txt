@@ -3,3 +3,4 @@ gunicorn
 requests
 uwsgi
 libsass
+python-dotenv
