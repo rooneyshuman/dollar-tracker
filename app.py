@@ -24,6 +24,14 @@ PLAID_COUNTRY_CODES = os.getenv("PLAID_COUNTRY_CODES")
 PLAID_OAUTH_REDIRECT_URI = os.getenv("PLAID_OAUTH_REDIRECT_URI", "")
 PLAID_OAUTH_NONCE = os.getenv("PLAID_OAUTH_NONCE", "")
 
+# Initialize plaid client
+client = plaid.Client(
+    client_id=PLAID_CLIENT_ID,
+    secret=PLAID_SECRET,
+    public_key=PLAID_PUBLIC_KEY,
+    environment=PLAID_ENV,
+    api_version="2019-05-29",
+)
 
 app.add_url_rule("/", view_func=Index.as_view("index"), methods=["GET"])
 
