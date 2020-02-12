@@ -1,18 +1,47 @@
 {% extends "layout.html" %}
 
 {% block head %}
-<link href="static/stylesheets/index.css" rel="stylesheet" />
+<!-- <link href="static/stylesheets/index.css" rel="stylesheet" /> -->
 {% endblock %}
 
 {% block body %}
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Dollar Tracker</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Settings</a></li>
-      <li><a href="#">Login/Signup</a></li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col s4 m4">
+      <h5 class="center">Account Balances</h5>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th><strong>Account</strong></th>
+            <th><strong>Balance</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for account in accounts|selectattr("type", "equalto", "depository") %}
+          <tr>
+            <td>{{ account.name }}</td>
+            <td>${{ account.balance }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col s4 m4">
+      <h5 class="center">Savings Progress</h5>
+    </div>
+    <div class="col s4 m4">
+      <h5 class="center">Stock Performance</h5>
+    </div>
   </div>
-</nav>
-{% endblock %}
+  <div class="row">
+    <div class="col s4 m4">
+      <h5 class="center">Spending Breakdown</h5>
+    </div>
+    <div class="col s4 m4">
+      <h5 class="center">Debt Breakdown</h5>
+    </div>
+    <div class="col s4 m4">
+      <h5 class="center">Net Worth Tracker</h5>
+    </div>
+  </div>
+  {% endblock %}
