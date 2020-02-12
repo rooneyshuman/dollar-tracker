@@ -3,3 +3,6 @@ gunicorn
 requests
 uwsgi
 libsass
+python-dotenv
+plaid-python>=3.0.0
+black
