@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for account in accounts|selectattr("type", "equalto", "depository") %}
+          {% for account in accounts | selectattr("type", "equalto", "depository") %}
           <tr>
             <td>{{ account.name }}</td>
             <td>${{ account.balance }}</td>
