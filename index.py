@@ -14,7 +14,7 @@ class Index(MethodView):
 
     def get_account_data(self):
         """
-        Returns list of dictionaries containing account the following data: name, balance, type
+        Returns list of dictionaries containing the following account data: name, balance, type
         :return: list of retrieved accounts
         """
 
