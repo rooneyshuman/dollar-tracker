@@ -12,6 +12,7 @@ PLAID_PRODUCTS = os.getenv("PLAID_PRODUCTS")
 PLAID_COUNTRY_CODES = os.getenv("PLAID_COUNTRY_CODES")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 API_VERSION = os.getenv("API_VERSION")
+IEX_KEY = os.getenv("IEX_KEY")
 
 # Initialize plaid client
 client = plaid.Client(
