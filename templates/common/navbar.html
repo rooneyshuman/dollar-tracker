@@ -1,0 +1,21 @@
+<nav role="navigation">
+  <div class="container nav-wrapper">
+    <div class="brand-logo">
+      <a href="#" data-target="main-side-menu" class="sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a>
+      <a href="#" >Dollar Tracker</a>
+    </div>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Login/Signup</a></li>
+    </ul>
+  </div>
+</nav>
+<ul class="container sidenav" id="main-side-menu">
+  <li><a href="{{url_for('index')}}"><i class="material-icons">bar_chart</i>Spending</a></li>
+  <li><a href="{{url_for('portfolio')}}"><i class="material-icons">show_chart</i>Portfolio</a></li>
+  <li><div class="divider"></div></li>
+  <li><a class="subheader">About</a></li>
+  <li><a class="waves-effect" href="#!">Logout</a></li>
+</ul>
