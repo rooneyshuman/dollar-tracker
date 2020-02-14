@@ -1,6 +1,6 @@
-// var iexPromise = undefined;
+//chart can only be drawn when dom is loaded, maybe dom loads faster than google charts, not sure if thats the case
+//every time
 document.addEventListener("DOMContentLoaded", function(event) {
-
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawOHLC);
 });
@@ -9,7 +9,6 @@ function drawOHLC(){
     const IEX_KEY = "pk_2d3798cff29b4669a4b6a4b0b41b2cf2"; //this is the public key, ok to share since I have free plan
     let symbol = symbols[0];
     let range = ranges[0];
-    // var iexPromise =
     fetch(`https://cloud.iexapis.com/v1/stock/${symbol}/chart/${range}?token=${IEX_KEY}`)
     .then(function(response){
         if(response.ok){
@@ -39,8 +38,8 @@ function drawOHLC(){
                 easing: 'out',
                 startup: true
             },
+            //needed for chart to take whole viewport
             chartArea: {
-              // leave room for y-axis labels
               width: '94%'
             },
             width: '100%'
@@ -48,7 +47,7 @@ function drawOHLC(){
         chart.draw(google.visualization.arrayToDataTable(prices, true), options);
     })
     .catch(function(error){
-        // ctx.fillText("Error retrieving from IEX", 10 , 50);
+        //TODO add error message on html
         console.log("Error retrieving from IEX: \n", error);
     });
 }
