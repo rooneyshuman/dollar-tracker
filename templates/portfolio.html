@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block head %}
-<!-- <link href="static/stylesheets/index.css" rel="stylesheet" /> -->
 {% endblock %}
 
 {% block body %}
@@ -13,13 +12,14 @@
       </div>
     </div>
   </div>
-
 </div>
+{#  Needed to pass variables from flask to js#}
 <script type="text/javascript">
   let config = ({{ config|tojson }});
   let symbols = config['symbols'];
   let ranges = config['ranges'];
 </script>
+{#  Google charts file#}
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="{{url_for('static', filename='javascripts/portfolio.js')}}"></script>
 

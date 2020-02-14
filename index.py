@@ -1,23 +1,6 @@
 from flask import render_template
 from flask.views import MethodView
 from settings import *
-PLAID_CLIENT_ID = "5df885c6e118630015ea6afa"
-PLAID_SECRET = "780318974bd704a7f9d978218c5082"
-PLAID_PUBLIC_KEY = "c37682766513f5832f7acfe6e6babd"
-PLAID_ENV = "sandbox"
-PLAID_PRODUCTS = "transactions"
-PLAID_COUNTRY_CODES = "US,CA,GB,FR,ES"
-ACCESS_TOKEN = "access-sandbox-52b973b6-3c7e-4a21-8ee3-19bd6f3e681a"
-API_VERSION = "2019-05-29"
-
-# Initialize plaid client
-client = plaid.Client(
-    client_id=PLAID_CLIENT_ID,
-    secret=PLAID_SECRET,
-    public_key=PLAID_PUBLIC_KEY,
-    environment=PLAID_ENV,
-    api_version=API_VERSION,
-)
 
 
 class Index(MethodView):
