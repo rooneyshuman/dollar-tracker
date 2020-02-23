@@ -29,8 +29,8 @@ function drawOHLC(){
             legend:'none',
             title: symbol,
             candlestick: {
-                fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
-                risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
+                fallingColor: { strokeWidth: 0, fill: '#1c84c6' }, 
+                risingColor: { strokeWidth: 0, fill: '#23c6c8' } 
             },
             colors: ['black'],
             animation:{
