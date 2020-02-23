@@ -104,3 +104,22 @@ a:hover .nav-icon:before {
 #chart_div {
   height: 500px;
 }
+
+.footer {
+  background: none repeat scroll 0 0 #fff;
+  border-top: 1px solid #e7eaec;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  transition: margin 0s;
+}
+
+.footer-text {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #676a6c;
+  font-size: 12px;
+}
