@@ -9,6 +9,9 @@ $accent-color--orange: #f8ac59;
 $accent-color--blue: #1c84c6;
 $accent-color--aqua: #23c6c8;
 $accent-color--gray: #5e5e5e;
+// Element colors
+$border-color--gray: #e7eaec;
+$text-color--gray: #676a6c;
 
 html {
   background-color: $background--gray;
@@ -18,7 +21,7 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #676a6c;
+  color: $text-color--gray;
 }
 
 h1,
@@ -59,7 +62,7 @@ a:hover .nav-icon:before {
 }
 
 .nav-icon {
-  color: #676a6c;
+  color: $text-color--gray;
   display: inline-block;
 }
 
@@ -82,6 +85,11 @@ a:hover .nav-icon:before {
   color: #fff;
 }
 
+.navbar-links li {
+  display: inline-block;
+  align-self: center;
+}
+
 .nav.navbar-links li a {
   color: #999c9e;
   font-size: 14px;
@@ -96,6 +104,92 @@ a:hover .nav-icon:before {
   margin-left: 5px;
 }
 
+.wrapper {
+  padding: 0 15px;
+  position: relative !important;
+}
+
+.gray-bg {
+  background-color: $background--gray;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.welcome-message {
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  overflow-x: hidden;
+}
+
+.dashboard-header {
+  border-top: 0;
+  border-bottom: 1px solid $border-color--gray;
+  background-color: #fff;
+  padding: 20px 20px 20px 50px;
+}
+
+.account-info {
+  padding: 20px 20px 20px 50px;
+}
+
+.dashboard-content {
+  padding: 20px 10px 30px;
+}
+
+.dashboard-col-title {
+  background-color: #fff;
+  border-color: $border-color--gray;
+  border-style: solid solid none;
+  border-width: 1px;
+  margin-bottom: 0;
+  padding: 15px 90px 10px 15px;
+  border-radius: 2px 2px 0 0;
+}
+
+.dashboard-col-title h6 {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 5px;
+  padding: 0;
+  text-overflow: ellipsis;
+  float: none;
+}
+
+.spending-icon {
+  font-size: 14px;
+  margin-left: 2px;
+  color: $brand-color--teal;
+}
+
+.dashboard-col-content {
+  clear: both;
+  background-color: #fff;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 15px 20px 20px 20px;
+  border-color: $border-color--gray;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.dashboard-col {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+
 .card {
   background-color: #fff;
   border: none;
@@ -103,4 +197,23 @@ a:hover .nav-icon:before {
 
 #chart_div {
   height: 500px;
+}
+
+.footer {
+  background: none repeat scroll 0 0 #fff;
+  border-top: 1px solid $border-color--gray;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  transition: margin 0s;
+}
+
+.footer-text {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: $text-color--gray;
+  font-size: 12px;
 }

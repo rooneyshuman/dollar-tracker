@@ -5,9 +5,14 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--Let browser know website is optimized for mobile-->
+  <!-- Let browser know website is optimized for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!--Import Font-->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <!-- Import Font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway&display=swap" rel="stylesheet">
@@ -19,7 +24,7 @@
   <script src="https://kit.fontawesome.com/2755d90d27.js" crossorigin="anonymous"></script>
   <!-- Custom css -->
   <link href="{{ url_for('static', filename='stylesheets/main.scss.css') }}" rel="stylesheet" type="text/css">
-  <title>{{ page_name }} - Dollar Tracker</title>
+  <title>{{ page_name }} | Dollar Tracker</title>
 
   {% block head %}{% endblock %}
 </head>
@@ -47,6 +52,12 @@
               <span>Portfolio</span>
             </a>
           </li>
+          <li>
+            <a href="#" class="nav-link">
+              <i class="fas fa-cogs nav-icon"></i>
+              <span>Settings</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -57,6 +68,11 @@
       </button>
       <ul class="nav navbar-links navbar-right">
         <li>
+          <span class="text-muted welcome-message">
+            Welcome to your financial dashboard.
+          </span>
+        </li>
+        <li>
           <a href="#">
             <i class="fa fa-sign-out">
               <span class="navbar-label">Log out</span>
@@ -65,6 +81,10 @@
         </li>
       </ul>
     </nav>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text"><strong>Copyright</strong> Dollar Tracker &copy; 2020</div>
   </div>
 
 
