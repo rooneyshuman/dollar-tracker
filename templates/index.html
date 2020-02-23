@@ -5,47 +5,80 @@
 {% endblock %}
 
 {% block body %}
-<!-- Welcome Header -->
-<div class="container
-<!-- Account Information --> 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Account Balances</h5>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th><strong>Account</strong></th>
-            <th><strong>Balance</strong></th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for account in accounts | selectattr("type", "equalto", "depository") %}
-          <tr>
-            <td>{{ account.name }}</td>
-            <td>${{ account.balance }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Savings Progress</h5>
-    </div>
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Stock Performance</h5>
+<div id="wrapper" class="dashboard gray-bg">
+  <!-- Welcome Header -->
+  <div class="container-fluid">
+    <div class="row dashboard-header white-bg">
+      <div class="col-md-3">
+        <h2>Welcome</h2>
+        <small>Your account information is below.</small>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Spending Breakdown</h5>
+  <!-- Account Information -->
+  <div class="container-fluid account-info white-bg">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Account Balances</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><strong>Account</strong></th>
+              <th><strong>Balance</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for account in accounts | selectattr("type", "equalto", "depository") %}
+            <tr>
+              <td>{{ account.name }}</td>
+              <td>${{ account.balance }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Savings Progress</h5>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Stock Performance</h5>
+      </div>
     </div>
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Debt Breakdown</h5>
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Spending Breakdown</h5>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Debt Breakdown</h5>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <h5 class="text-center">Net Worth Tracker</h5>
+      </div>
     </div>
-    <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Net Worth Tracker</h5>
+  </div>
+  <!-- Dashboard Content -->
+  <div class="container dashboard-content">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="spending-breakdown">
+              <div class="spending-title">
+                <h6>New spending data!</h6>
+                <i class="fas fa-search-dollar spending-icon"></i>
+                <!-- <i class="fas fa-money-bill-wave spending-icon"></i> -->
+              </div>
+              <div class="spending-content">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
 {% endblock %}
