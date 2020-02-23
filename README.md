@@ -8,7 +8,7 @@
 | ------------- | ------------- |
 | HTML5  | Python |
 | CSS3  | Flask |
-| Materialize | [Plaid API](https://plaid.com/) |
+| Bootstrap | [Plaid API](https://plaid.com/) |
 | Jinja | [pyEX](https://github.com/timkpaine/pyEX) |j
 
 ## Dependencies
