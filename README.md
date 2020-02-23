@@ -29,7 +29,7 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-  * [Deployment](#deployment)
+* [Deployment](#deployment)
 * [Contributing](#contributing)
 * [Contributors](#contributors)
 * [License](#license)
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### Deployment 
+## Deployment 
 
 Dollar Tracker is deployed to: https://dollar-tracker.herokuapp.com/
 
