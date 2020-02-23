@@ -9,6 +9,9 @@ $accent-color--orange: #f8ac59;
 $accent-color--blue: #1c84c6;
 $accent-color--aqua: #23c6c8;
 $accent-color--gray: #5e5e5e;
+// Element colors
+$border-color--gray: #e7eaec;
+$text-color--gray: #676a6c;
 
 html {
   background-color: $background--gray;
@@ -18,7 +21,7 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #676a6c;
+  color: $text-color--gray;
 }
 
 h1,
@@ -59,7 +62,7 @@ a:hover .nav-icon:before {
 }
 
 .nav-icon {
-  color: #676a6c;
+  color: $text-color--gray;
   display: inline-block;
 }
 
@@ -107,7 +110,7 @@ a:hover .nav-icon:before {
 }
 
 .gray-bg {
-  background-color: #f3f3f4;
+  background-color: $background--gray;
 }
 
 .white-bg {
@@ -130,7 +133,7 @@ a:hover .nav-icon:before {
 
 .dashboard-header {
   border-top: 0;
-  border-bottom: 1px solid #e7eaec;
+  border-bottom: 1px solid $border-color--gray;
   background-color: #fff;
   padding: 20px 20px 20px 50px;
 }
@@ -141,12 +144,11 @@ a:hover .nav-icon:before {
 
 .dashboard-content {
   padding: 20px 10px 30px;
-  margin: 10px 70px;
 }
 
-.spending-title {
+.dashboard-col-title {
   background-color: #fff;
-  border-color: #e7eaec;
+  border-color: $border-color--gray;
   border-style: solid solid none;
   border-width: 1px;
   margin-bottom: 0;
@@ -154,10 +156,10 @@ a:hover .nav-icon:before {
   border-radius: 2px 2px 0 0;
 }
 
-.spending-title h6 {
+.dashboard-col-title h6 {
   display: inline-block;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 0 5px;
   padding: 0;
   text-overflow: ellipsis;
@@ -170,15 +172,22 @@ a:hover .nav-icon:before {
   color: $brand-color--teal;
 }
 
-.spending-content {
+.dashboard-col-content {
   clear: both;
   background-color: #fff;
   margin-bottom: 25px;
   margin-top: 0;
   padding: 15px 20px 20px 20px;
-  border-color: #e7eaec;
+  border-color: $border-color--gray;
   border-style: solid;
   border-width: 1px;
+}
+
+.dashboard-col {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
 }
 
 .card {
@@ -192,7 +201,7 @@ a:hover .nav-icon:before {
 
 .footer {
   background: none repeat scroll 0 0 #fff;
-  border-top: 1px solid #e7eaec;
+  border-top: 1px solid $border-color--gray;
   bottom: 0;
   left: 0;
   padding: 10px 20px;
@@ -205,6 +214,6 @@ a:hover .nav-icon:before {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #676a6c;
+  color: $text-color--gray;
   font-size: 12px;
 }
