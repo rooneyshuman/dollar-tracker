@@ -101,10 +101,84 @@ a:hover .nav-icon:before {
   margin-left: 5px;
 }
 
+.wrapper {
+  padding: 0 15px;
+  position: relative !important;
+}
+
+.gray-bg {
+  background-color: #f3f3f4;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
 .welcome-message {
   margin-right: 10px;
   padding: 20px;
   font-size: 13px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  overflow-x: hidden;
+}
+
+.dashboard-header {
+  border-top: 0;
+  border-bottom: 1px solid #e7eaec;
+  background-color: #fff;
+  padding: 20px 20px 20px 50px;
+}
+
+.account-info {
+  padding: 20px 20px 20px 50px;
+}
+
+.dashboard-content {
+  padding: 20px 10px 30px;
+  margin: 10px 70px;
+}
+
+.spending-title {
+  background-color: #fff;
+  border-color: #e7eaec;
+  border-style: solid solid none;
+  border-width: 1px;
+  margin-bottom: 0;
+  padding: 15px 90px 10px 15px;
+  border-radius: 2px 2px 0 0;
+}
+
+.spending-title h6 {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 5px;
+  padding: 0;
+  text-overflow: ellipsis;
+  float: none;
+}
+
+.spending-icon {
+  font-size: 14px;
+  margin-left: 2px;
+  color: $brand-color--teal;
+}
+
+.spending-content {
+  clear: both;
+  background-color: #fff;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .card {
