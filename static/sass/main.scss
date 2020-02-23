@@ -41,7 +41,7 @@ h5 {
 
 .navbar-toggler {
   background-color: $brand-color--teal;
-  padding: 4px 12px; 
+  padding: 4px 12px;
   margin: 14px 5px 5xp 20px;
   outline: none;
   border: none;
@@ -59,37 +59,36 @@ a:hover .nav-icon:before {
 }
 
 .nav-icon {
-  color:#676a6c; 
+  color: #676a6c;
   display: inline-block;
 }
 
-.nav > li > a {
+.nav>li>a {
   color: #a7b1c2;
   font-weight: 300;
   padding: 10px 15px 10px 15px;
   display: block;
 }
 
-.nav > li > a i {
+.nav>li>a i {
   margin-right: 6px;
 }
 
-.nav > li > a:hover {
+.nav>li>a:hover {
   color: #fff;
 }
 
-.nav > li.active > a {
+.nav>li.active>a {
   color: #fff;
 }
 
 .nav.navbar-links li a {
   color: #999c9e;
   font-size: 14px;
-  padding: 20px 10px; 
+  padding: 20px 10px;
   text-align: right;
 }
 
-// Log out label 
 .navbar-label {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 600;
