@@ -82,6 +82,11 @@ a:hover .nav-icon:before {
   color: #fff;
 }
 
+.navbar-links li {
+  display: inline-block;
+  align-self: center;
+}
+
 .nav.navbar-links li a {
   color: #999c9e;
   font-size: 14px;
@@ -94,6 +99,12 @@ a:hover .nav-icon:before {
   font-weight: 600;
   font-style: normal;
   margin-left: 5px;
+}
+
+.welcome-message {
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 13px;
 }
 
 .card {
