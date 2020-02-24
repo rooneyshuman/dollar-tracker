@@ -4,17 +4,40 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container-fluid gray-bg">
   <div class="row">
-    <div class="col-12">
-      <div class="card mx-auto">
+    {% for i in range(config_len) %}
+      <div class="col-sm-12 col-md-6">
+      <div class="card mx-auto border">
+        <h5 class="card-title text-center font-weight-bold">{{ config["symbols"][i] }}</h5>
         <div class="card-body">
-          <div id="chart_div"></div>
+          <div id="chart-div-{{ i }}"></div>
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
  </div>
+<div class="container-fluid gray-bg pt-16">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="list-group">
+        <!--TODO check for error codes-->
+        {% for msg in messages %}
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <img src="{{ msg["user"]["avatar_url_ssl"] }}" alt="Avatar" class="img-fluid avatar">
+            <h5 class="mb-1 font-weight-bold">{{ msg["user"]["name"] }}</h5>
+            <small>{{ msg["created_at"] }}</small>
+          </div>
+          <p class="mb-1">{{ msg["body"] }}</p>
+          <span class="badge badge-info badge-pill">{{ msg["entities"]["sentiment"]["basic"] }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Needed to pass variables from flask to js -->
 <script type="text/javascript">
   let config = ({{ config|tojson }});

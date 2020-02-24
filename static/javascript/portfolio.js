@@ -2,13 +2,17 @@
 //every time
 document.addEventListener("DOMContentLoaded", function(event) {
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawOHLC);
+    google.charts.setOnLoadCallback(chartStocks);
 });
-function drawOHLC(){
-    var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+function chartStocks(){
+    for (let i = 0; i < symbols.length; i++) {
+        let chart = new google.visualization.CandlestickChart(document.getElementById(`chart-div-${i}`));
+        drawOHLC(chart, symbols[i], ranges[i])
+    }
+}
+function drawOHLC(chart, symbol, range){
     const IEX_KEY = "pk_2d3798cff29b4669a4b6a4b0b41b2cf2"; //this is the public key, ok to share since I have free plan
-    let symbol = symbols[0];
-    let range = ranges[0];
     fetch(`https://cloud.iexapis.com/v1/stock/${symbol}/chart/${range}?token=${IEX_KEY}`)
     .then(function(response){
         if(response.ok){
@@ -27,7 +31,9 @@ function drawOHLC(){
         }
         let options = {
             legend:'none',
-            title: symbol,
+            titleTextStyle: {
+                fontSize: 24
+            },
             candlestick: {
                 fallingColor: { strokeWidth: 0, fill: '#1c84c6' }, 
                 risingColor: { strokeWidth: 0, fill: '#23c6c8' } 
@@ -40,9 +46,18 @@ function drawOHLC(){
             },
             //needed for chart to take whole viewport
             chartArea: {
-              width: '94%'
+                width: '84%',
+                height: '90%'
             },
-            width: '100%'
+            width: '90%',
+            hAxis:{
+                textPosition: 'none'
+
+            },
+            vAxis:{
+                format: '$##',
+                title: 'Price'
+            }
         };
         chart.draw(google.visualization.arrayToDataTable(prices, true), options);
     })
