@@ -1,5 +1,6 @@
 from flask import render_template
 from flask.views import MethodView
+import requests
 
 
 class Portfolio(MethodView):
@@ -9,5 +10,22 @@ class Portfolio(MethodView):
         :return: renders the portfolio.html page on return
         TODO maybe user can select these values?
         """
-        config = {"symbols": ["PTON"], "ranges": ["3m"]}
-        return render_template("portfolio.html", page_name="Portfolio", config=config)
+        symbols = ["PTON", "FB"]
+        ranges = ["3m", "3m"]
+        config = {"symbols": symbols, "ranges": ranges}
+        messages = self.getTwits()
+        return render_template(
+            "portfolio.html",
+            page_name="Portfolio",
+            config=config,
+            config_len=len(symbols),
+            messages=messages,
+        )
+
+    def getTwits(self):
+        r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/spy.json")
+        if r.status_code == 200:
+            data = r.json()
+            return data["messages"]
+        else:
+            return {"error": r.status_code}
