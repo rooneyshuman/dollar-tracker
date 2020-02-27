@@ -103,5 +103,15 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  var savingsGoal = 500;
+  var savingsBalance = {{ accounts | safe }}.filter( e => e.subtype == "savings")[0].balance;
+  var savingsProg = (savingsBalance / savingsGoal) * 100;
+
+  $(".progress-bar").width(savingsProg + '%');
+  $(".progress-bar").html('$' + savingsBalance);
+  $(".savings-prog").html(savingsProg + '%');
+
+</script>
 
 {% endblock %}
