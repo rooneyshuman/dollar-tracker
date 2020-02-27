@@ -220,15 +220,15 @@ a:hover .nav-icon:before {
   font-size: 12px;
 }
 
-.pt-16{
+.pt-16 {
   padding-top: 16px;
 }
 
-.list-group{
-    max-height: 400px;
-    margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
+.list-group {
+  max-height: 400px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .avatar {
@@ -236,4 +236,23 @@ a:hover .nav-icon:before {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+.progress {
+  margin-top: 50px;
+}
+
+.progress-bar {
+  background-color: $accent-color--aqua;
+}
+
+.savings-prog,
+.savings-text {
+  text-align: center;
+  font-weight: 400;
+}
+
+.savings-prog {
+  margin-top: 30px;
+  font-size: 40px;
 }
