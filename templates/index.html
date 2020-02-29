@@ -39,6 +39,11 @@
       </div>
       <div class="col-sm-4 col-md-4">
         <h5 class="text-center">Savings Progress</h5>
+        <div class="progress" style="height: 30px;">
+          <div class="progress-bar progress-bar-animated" role="progressbar"></div>
+        </div>
+        <p class="savings-prog"></p>
+        <p class="savings-text">saved of your <span class="savings-goal"></span> goal</p>
       </div>
       <div class="col-sm-4 col-md-4">
         <h5 class="text-center">Stock Performance</h5>
@@ -98,5 +103,16 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  var savingsGoal = 500;
+  var savingsBalance = {{ accounts | safe }}.filter( e => e.subtype == "savings")[0].balance;
+  var savingsProg = (savingsBalance / savingsGoal) * 100;
+
+  $(".progress-bar").width(savingsProg + '%');
+  $(".progress-bar").html('$' + savingsBalance);
+  $(".savings-prog").html(savingsProg + '%');
+  $(".savings-goal").html('$' + savingsGoal);
+
+</script>
 
 {% endblock %}

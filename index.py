@@ -26,6 +26,7 @@ class Index(MethodView):
             dict(
                 name=raw_acct["name"],
                 balance=raw_acct["balances"]["current"],
+                subtype=raw_acct["subtype"],
                 type=raw_acct["type"],
             )
             for raw_acct in raw_acct_data["accounts"]
