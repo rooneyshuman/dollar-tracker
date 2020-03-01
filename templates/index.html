@@ -1,102 +1,98 @@
 {% extends "layout.html" %}
 
-{% block head %}
-<!-- <link href="{{ url_for('static', filename='stylesheets/index.scss.css') }}" rel="stylesheet" type="text/css"> -->
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block body %}
-<div id="wrapper" class="dashboard gray-bg">
-  <!-- Welcome Header -->
-  <div class="container-fluid">
-    <div class="row dashboard-header white-bg">
-      <div class="col-md-3">
-        <h2>Welcome</h2>
-        <small>Your account information is below.</small>
-      </div>
+<!-- Welcome Header -->
+<div class="container-fluid">
+  <div class="row dashboard-header white-bg">
+    <div class="col-md-3">
+      <h2>Welcome</h2>
+      <small>Your account information is below.</small>
     </div>
   </div>
-  <!-- Account Information -->
-  <div class="container-fluid account-info white-bg">
-    <div class="row">
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Account Balances</h5>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th><strong>Account</strong></th>
-              <th><strong>Balance</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for account in accounts | selectattr("type", "equalto", "depository") %}
-            <tr>
-              <td>{{ account.name }}</td>
-              <td>${{ account.balance }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+</div>
+<!-- Account Information -->
+<div class="container-fluid account-info white-bg">
+  <div class="row">
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Account Balances</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><strong>Account</strong></th>
+            <th><strong>Balance</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for account in accounts | selectattr("type", "equalto", "depository") %}
+          <tr>
+            <td>{{ account.name }}</td>
+            <td>${{ account.balance }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Savings Progress</h5>
+      <div class="progress" style="height: 30px;">
+        <div class="progress-bar progress-bar-animated" role="progressbar"></div>
       </div>
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Savings Progress</h5>
-        <div class="progress" style="height: 30px;">
-          <div class="progress-bar progress-bar-animated" role="progressbar"></div>
+      <p class="savings-prog"></p>
+      <p class="savings-text">saved of your <span class="savings-goal"></span> goal</p>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Stock Performance</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Spending Breakdown</h5>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Debt Breakdown</h5>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <h5 class="text-center">Net Worth Tracker</h5>
+    </div>
+  </div>
+</div>
+<!-- Dashboard Content -->
+<div class="container dashboard-content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="dashboard-col spending-breakdown">
+            <div class="dashboard-col-title">
+              <h6>New spending data!</h6>
+              <i class="fas fa-search-dollar spending-icon"></i>
+            </div>
+            <div class="dashboard-col-content">
+            </div>
+          </div>
         </div>
-        <p class="savings-prog"></p>
-        <p class="savings-text">saved of your <span class="savings-goal"></span> goal</p>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Stock Performance</h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Spending Breakdown</h5>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Debt Breakdown</h5>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <h5 class="text-center">Net Worth Tracker</h5>
-      </div>
-    </div>
-  </div>
-  <!-- Dashboard Content -->
-  <div class="container dashboard-content">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="dashboard-col spending-breakdown">
-              <div class="dashboard-col-title">
-                <h6>New spending data!</h6>
-                <i class="fas fa-search-dollar spending-icon"></i>
-              </div>
-              <div class="dashboard-col-content">
-              </div>
+        <div class="col-lg-4">
+          <div class="dashboard-col">
+            <div class="dashboard-col-title">
+              <h6>New spending data!</h6>
+              <i class="fas fa-search-dollar spending-icon"></i>
+            </div>
+            <div class="dashboard-col-content">
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="dashboard-col">
-              <div class="dashboard-col-title">
-                <h6>New spending data!</h6>
-                <i class="fas fa-search-dollar spending-icon"></i>
-              </div>
-              <div class="dashboard-col-content">
-              </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="dashboard-col spending">
+            <div class="dashboard-col-title">
+              <h6>New spending data!</h6>
+              <i class="fas fa-search-dollar spending-icon"></i>
+            </div>
+            <div class="dashboard-col-content">
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="dashboard-col spending">
-              <div class="dashboard-col-title">
-                <h6>New spending data!</h6>
-                <i class="fas fa-search-dollar spending-icon"></i>
-              </div>
-              <div class="dashboard-col-content">
-              </div>
-            </div>
 
-          </div>
         </div>
       </div>
     </div>
@@ -112,7 +108,6 @@
   $(".progress-bar").html('$' + savingsBalance);
   $(".savings-prog").html(savingsProg + '%');
   $(".savings-goal").html('$' + savingsGoal);
-
 </script>
 
 {% endblock %}
