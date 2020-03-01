@@ -40,11 +40,14 @@
 <body>
   <div id="wrapper">
     <!-- Navigation Bar (Side) -->
-    <nav class="navbar-default navbar-static-side">
+    <nav id="sidebar" class="navbar-default navbar-static-side">
       <div class="sidebar-collapse">
         <ul class="nav menu" id="side-menu">
           <li class="nav-header">
             <h4 class="navbar-brand text-white">Dollar Tracker</h4>
+            <div class="brand"><a href="{{url_for('index')}}">
+              <img id="navbar-logo" src="../static/images/navbar-logo.png" alt="navigation bar logo">
+            </a></div>
           </li>
           <li class>
             <a href="{{url_for('index')}}" class="nav-link">
@@ -70,7 +73,7 @@
     <!-- Navigation Bar (Top) -->
     <div id="dashboard-wrapper" class="dashboard gray-bg">
       <nav class="navbar navbar-top navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleDashboardLinks"
+        <button id="menu-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleDashboardLinks"
           aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
@@ -110,6 +113,13 @@
   </script>
   <!--JavaScript at end of body for optimized loading-->
   <script src="{{url_for('static', filename='javascript/main.js')}}"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    $('#menu-button').on('click', function () {
+      $('#sidebar').toggleClass('active');
+    });
+  });
+  </script>
 </body>
 
 </html>
