@@ -3,6 +3,7 @@ $background--gray: #f3f3f4;
 $background--white: #fff;
 // Primary colors
 $brand-color--dark-blue: #2f4050;
+$brand-color--dark-blue-2: #2a3745;
 $brand-color--teal: #1ab394;
 // Accent colors
 $accent-color--orange: #f8ac59;
@@ -75,6 +76,7 @@ a:hover .nav-icon:before {
 .nav>li>a {
   color: #a7b1c2;
   font-weight: 300;
+  font-size: 14px;
   padding: 10px 15px 10px 15px;
   display: block;
 }
@@ -308,6 +310,10 @@ a:hover .nav-icon:before {
 .nav-header {
   padding: 33px 25px;
   background-color: $brand-color--dark-blue;
+}
+
+.menu>li>a:hover {
+  background-color: $brand-color--dark-blue-2;
 }
 
 @media (min-width: 768px) {
