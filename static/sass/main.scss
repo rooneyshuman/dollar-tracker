@@ -31,6 +31,16 @@ body {
   overflow-x: hidden;
 }
 
+a { 
+  color: $text-color--gray;
+  font-weight: 600;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #fff;
+}
+
 h1,
 h2,
 h3,
@@ -134,7 +144,8 @@ a:hover .nav-icon:before {
   position: relative;
   min-height: 100vh;
   flex-shrink: 1;
-  width: calc(100% - 220px);
+  // width: calc(100% - 60px);
+  width: 100%;
 }
 
 .gray-bg {
@@ -308,12 +319,62 @@ a:hover .nav-icon:before {
 }
 
 .nav-header {
-  padding: 33px 25px;
+  padding: 15px 15px;
   background-color: $brand-color--dark-blue;
 }
 
 .menu>li>a:hover {
   background-color: $brand-color--dark-blue-2;
+}
+
+#navbar-logo {
+  height: 3em;
+  width: 3em;
+  margin-left: -15px;
+  margin-top: -5px;
+}
+
+#sidebar.active {
+  min-width: 60px;
+  max-width: 60px;
+  text-align: center;
+}
+
+#sidebar .sidebar-collapse div {
+  display: none;
+}
+
+#sidebar.active .sidebar-collapse h4 {
+  display: none;
+}
+
+#sidebar.active .sidebar-collapse div {
+  display: block;
+}
+
+#sidebar ul li a {
+  text-align: left;
+}
+
+#sidebar.active ul li a {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+  margin-right: 0;
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+#sidebar.active ul li a span {
+  display: none;
+}
+
+#menu-button {
+  transition: all 0.3s; 
 }
 
 @media (min-width: 768px) {
@@ -326,5 +387,39 @@ a:hover .nav-icon:before {
 @media (min-width: 768px) {
   #dashboard-wrapper {
     min-height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar.active {
+    min-width: 60px;
+    max-width: 60px;
+    margin-left: -60px !important;
+  }
+
+  #sidebar {
+    margin-left: 0;
+  }
+
+  #sidebar .sidebar-collapse div {
+    display: none;
+  }
+  #sidebar.active .sidebar-collapse h4 {
+    display: none;
+  }
+  #sidebar.active .sidebar-collapse div {
+    display: block;
+  }
+
+  #sidebar.active ul li a {
+    font-size: 0.85em;
+    text-align: center;
+  }
+
+  #sidebar.active ul li a i {
+    margin-right: 0px;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
   }
 }
