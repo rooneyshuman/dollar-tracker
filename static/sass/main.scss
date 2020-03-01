@@ -13,6 +13,7 @@ $accent-color--gray: #5e5e5e;
 $border-color--gray: #e7eaec;
 $text-color--gray: #676a6c;
 
+
 html {
   background-color: $background--gray;
   margin: 0;
@@ -26,6 +27,7 @@ body {
   font-weight: 300;
   font-style: normal;
   color: $text-color--gray;
+  overflow-x: hidden;
 }
 
 h1,
@@ -49,7 +51,7 @@ h5 {
 .navbar-toggler {
   background-color: $brand-color--teal;
   padding: 4px 12px;
-  margin: 14px 5px 5xp 20px;
+  margin: 5px 5px 5px 20px;
   outline: none;
   border: none;
 }
@@ -103,13 +105,34 @@ a:hover .nav-icon:before {
 
 .navbar-label {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
   margin-left: 5px;
 }
 
-.wrapper {
-  padding: 0 15px;
+.navbar-label.logout {
+  font-weight: 600;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+
+.navbar.navbar-top {
+  padding: 0;
+  width: 100%;
+}
+
+#dashboard-wrapper {
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  flex-shrink: 1;
+  width: calc(100% - 220px);
 }
 
 .gray-bg {
@@ -255,4 +278,47 @@ a:hover .nav-icon:before {
 .savings-prog {
   margin-top: 30px;
   font-size: 40px;
+}
+
+#wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.nav {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav.menu>li {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.navbar-default {
+  background-color: $brand-color--dark-blue;
+}
+
+.nav-header {
+  padding: 33px 25px;
+  background-color: $brand-color--dark-blue;
+}
+
+@media (min-width: 768px) {
+  .navbar-static-side {
+    z-index: 2001;
+    width: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  #dashboard-wrapper {
+    min-height: 100vh;
+  }
 }
