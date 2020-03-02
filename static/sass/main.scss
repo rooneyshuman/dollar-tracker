@@ -31,12 +31,13 @@ body {
   overflow-x: hidden;
 }
 
-a { 
+a {
   color: $text-color--gray;
   font-weight: 600;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
   color: #fff;
 }
@@ -276,6 +277,7 @@ a:hover .nav-icon:before {
 
 .progress {
   margin-top: 50px;
+  height: 30px;
 }
 
 .progress-bar {
@@ -374,7 +376,7 @@ a:hover .nav-icon:before {
 }
 
 #menu-button {
-  transition: all 0.3s; 
+  transition: all 0.3s;
 }
 
 @media (min-width: 768px) {
@@ -404,9 +406,11 @@ a:hover .nav-icon:before {
   #sidebar .sidebar-collapse div {
     display: none;
   }
+
   #sidebar.active .sidebar-collapse h4 {
     display: none;
   }
+
   #sidebar.active .sidebar-collapse div {
     display: block;
   }
