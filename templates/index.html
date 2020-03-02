@@ -100,14 +100,31 @@
 </div>
 
 <script type="text/javascript">
+  /* Savings progress bar functionality */
   var savingsGoal = 500;
   var savingsBalance = {{ accounts | safe }}.filter( e => e.subtype == "savings")[0].balance;
   var savingsProg = (savingsBalance / savingsGoal) * 100;
 
-  $(".progress-bar").width(savingsProg + '%');
   $(".progress-bar").html('$' + savingsBalance);
   $(".savings-prog").html(savingsProg + '%');
   $(".savings-goal").html('$' + savingsGoal);
+
+  // Animates the width of the savings progress bar. Is executed by adding the ".active" class 
+  // to the ".progress" element
+  var current_width = 1;
+  var progress = setInterval(() => {
+    var $bar = $('.progress-bar');
+
+    if (current_width >= savingsProg) {
+        clearInterval(progress);
+        $('.progress').removeClass('active');
+    } else {
+        ++current_width;
+        $bar.width(current_width + "%");
+    }
+
+  }, 10);
+
 </script>
 
 {% endblock %}
