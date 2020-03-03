@@ -17,7 +17,7 @@
   <div class="row">
     <!-- Account Balances -->
     <div class="col-sm-4 col-md-4">
-      <h5 class="text-center">Account Balances</h5>
+      <h5 class="text-center">Depository Account Balances</h5>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -54,7 +54,7 @@
       <h5 class="text-center">Net Worth Summary</h5>
         <div class="row" id="chart_row">
           <div class="col-sm-4" id="net_worth_text">
-            <h4>Net Worth:</h4>
+            <h4>NET WORTH:</h4>
           </div>
           <div class="col-sm-4">
             <div id="assets_chart"></div>
@@ -65,44 +65,28 @@
         </div>
         <div class="row">
           <div class="col-sm-4" id="net_worth_amt">
-            <h4>$82394</h4>
+            <h4 id="net_worth_val"></h4>
           </div>
           <div class="col-sm-4">
-            <h7>TOTAL ASSETS</h7>
-            <table class="table table-striped">
+            <h7>TOTAL ASSETS: <a id="assets_total"></a></h7>
+            <table class="table table-striped" id="asset_table">
               <thead>
                 <tr>
                   <th><strong>Account</strong></th>
                   <th><strong>Balance</strong></th>
                 </tr>
               </thead>
-              <tbody>
-                {% for account in accounts | selectattr("type", "equalto", "depository") %}
-                <tr>
-                  <td>{{ account.name }}</td>
-                  <td>${{ account.balance }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
             </table> 
           </div>
           <div class="col-sm-4">
-            <h7>TOTAL LIABILITIES</h7>
-            <table class="table table-striped">
+           <h7>TOTAL LIABILITIES: <a id="liabilities_total"></a></h7>
+            <table class="table table-striped" id="liability_table">
               <thead>
                 <tr>
                   <th><strong>Account</strong></th>
                   <th><strong>Balance</strong></th>
                 </tr>
               </thead>
-              <tbody>
-                {% for account in accounts | selectattr("type", "equalto", "depository") %}
-                <tr>
-                  <td>{{ account.name }}</td>
-                  <td>${{ account.balance }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
             </table> 
           </div>
         </div>
