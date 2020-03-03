@@ -66,7 +66,18 @@ function drawChart() {
   var options = {
     pieHole: .5,
     pieSliceText: 'none',
-    legend: 'none'
+    legend: 'none',
+    slices: {
+      0: {
+        color: '#1c84c6'
+      },
+      1: {
+        color: '#1ab394'
+      },
+      2: {
+        color: '#5e5e5e'
+      }
+    }
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('assets_chart'));
