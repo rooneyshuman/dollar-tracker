@@ -46,8 +46,8 @@
           <li class="nav-header">
             <h4 class="navbar-brand text-white">Dollar Tracker</h4>
             <div class="brand"><a href="{{url_for('index')}}">
-              <img id="navbar-logo" src="../static/images/navbar-logo.png" alt="navigation bar logo">
-            </a></div>
+                <img id="navbar-logo" src="../static/images/navbar-logo.png" alt="navigation bar logo">
+              </a></div>
           </li>
           <li class>
             <a href="{{url_for('index')}}" class="nav-link">
@@ -73,8 +73,9 @@
     <!-- Navigation Bar (Top) -->
     <div id="dashboard-wrapper" class="dashboard gray-bg">
       <nav class="navbar navbar-top navbar-light bg-light">
-        <button id="menu-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleDashboardLinks"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="menu-button" class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarToggleDashboardLinks" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav navbar-links navbar-right">
@@ -112,13 +113,12 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
   <!--JavaScript at end of body for optimized loading-->
-  <script src="{{url_for('static', filename='javascript/main.js')}}"></script>
   <script type="text/javascript">
-  $(document).ready(function () {
-    $('#menu-button').on('click', function () {
-      $('#sidebar').toggleClass('active');
+    $(document).ready(function () {
+      $('#menu-button').on('click', function () {
+        $('#sidebar').toggleClass('active');
+      });
     });
-  });
   </script>
 </body>
 
