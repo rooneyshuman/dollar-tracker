@@ -275,6 +275,7 @@ a:hover .nav-icon:before {
   border-radius: 50%;
 }
 
+// SAVINGS PROGRESS BAR STYLES
 .progress {
   margin-top: 50px;
   height: 30px;
@@ -293,6 +294,25 @@ a:hover .nav-icon:before {
 .savings-prog {
   margin-top: 30px;
   font-size: 40px;
+}
+
+// NET WORTH STYLES
+#chart_row {
+  height: 210px;
+}
+
+#net_worth_text,
+#net_worth_amt {
+  text-align: center;
+}
+
+#net_worth_val {
+  font-weight: 400;
+  font-size: 40px;
+}
+
+#net_worth_text>h4 {
+  margin-top: 170px;
 }
 
 #wrapper {
