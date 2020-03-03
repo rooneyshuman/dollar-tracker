@@ -16,6 +16,34 @@ var liabilities = [
 function net_worth_calc(accounts) {
   get_assets(accounts);
   get_liabilities(accounts);
+
+  var assets_total = 0;
+  var liabilities_total = 0;
+
+  for (let acct of assets.slice(1, assets.length)) {
+    assets_total += acct[1];
+  }
+  $("#assets_total").html('$' + Math.round(assets_total));
+
+  for (let acct of liabilities.slice(1, liabilities.length)) {
+    liabilities_total += acct[1];
+  }
+  $("#liabilities_total").html('-$' + Math.round(liabilities_total));
+  $("#net_worth_val").html('$' + Math.round((assets_total - liabilities_total)));
+
+  var asset_table_content = "<tbody>";
+  for (let acct of assets.slice(1, assets.length)) {
+    asset_table_content += "<tr> <td>" + acct[0] + "</td> <td>$" + Math.round(acct[1]) + "</td></tr>";
+  }
+  asset_table_content += "</tbody>"
+  $("#asset_table").append(asset_table_content);
+
+  var liability_table_content = "<tbody>";
+  for (let acct of liabilities.slice(1, assets.length)) {
+    liability_table_content += "<tr> <td>" + acct[0] + "</td> <td>-$" + Math.round(acct[1]) + "</td></tr>";
+  }
+  liability_table_content += "</tbody>"
+  $("#liability_table").append(liability_table_content);
 }
 
 // Assets retrieval and calculations
@@ -84,4 +112,5 @@ function drawChart() {
   chart.draw(assets_chart_data, options);
   chart = new google.visualization.PieChart(document.getElementById('liabilities_chart'));
   chart.draw(liabilities_chart_data, options);
+
 }
