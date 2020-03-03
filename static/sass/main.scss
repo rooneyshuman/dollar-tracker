@@ -303,7 +303,12 @@ a:hover .nav-icon:before {
 
 #net_worth_text,
 #net_worth_amt {
-  text-align: right;
+  text-align: center;
+}
+
+#net_worth_val {
+  font-weight: 400;
+  font-size: 40px;
 }
 
 #net_worth_text>h4 {
