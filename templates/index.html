@@ -52,23 +52,23 @@
     <!-- Net Worth Summary -->
     <div class="col-sm-8">
       <h5 class="text-center">Net Worth Summary</h5>
-        <div class="row">
-          <div class="col-sm-4">
-            <h2>Net Worth</h2>
+        <div class="row" id="chart_row">
+          <div class="col-sm-4" id="net_worth_text">
+            <h4>Net Worth:</h4>
           </div>
           <div class="col-sm-4">
-            <div id="donutchart"></div>
+            <div id="assets_chart"></div>
           </div>
           <div class="col-sm-4">
-            <div id="donutchart1"></div>
+            <div id="liabilities_chart"></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">
-            <h2>$82394</h2>
+          <div class="col-sm-4" id="net_worth_amt">
+            <h4>$82394</h4>
           </div>
           <div class="col-sm-4">
-            <h7>ASSETS</h7>
+            <h7>TOTAL ASSETS</h7>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -87,7 +87,7 @@
             </table> 
           </div>
           <div class="col-sm-4">
-            <h7>LIABILITIES</h7>
+            <h7>TOTAL LIABILITIES</h7>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -182,5 +182,8 @@
 <!-- Google charts file --> 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="{{url_for('static', filename='javascript/index.js')}}"></script>
+<script type="text/javascript">
+  accounts = net_worth_calc({{accounts|tojson}})
+</script>
 
 {% endblock %}
