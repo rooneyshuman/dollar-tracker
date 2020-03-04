@@ -11,7 +11,10 @@ class Index(MethodView):
         :return: renders the index.html page on return
         """
         accounts = self.get_account_data()
-        return render_template("index.html", page_name="Main", accounts=accounts)
+        transactions = self.get_transaction_data()
+        return render_template(
+            "index.html", page_name="Main", accounts=accounts, transactions=transactions
+        )
 
     def get_account_data(self):
         """
