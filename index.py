@@ -57,12 +57,11 @@ class Index(MethodView):
         # Create dictionary with transactions' information
         transactions = [
             dict(
-                amount=transaction["amount"],
-                name=transaction["name"],
                 date=transaction["date"],
+                name=transaction["name"],
                 category=transaction["category"][0],
+                amount=transaction["amount"],
             )
             for transaction in transactions_response["transactions"]
         ]
-
         return transactions
