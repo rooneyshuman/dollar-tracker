@@ -315,6 +315,15 @@ a:hover .nav-icon:before {
   margin-top: 170px;
 }
 
+// SPENDING BREAKDOWN
+#expenses_chart {
+  height: fit-content;
+}
+
+#transaction_table {
+  font-size: 12px;
+}
+
 #wrapper {
   width: 100%;
   overflow-x: hidden;
