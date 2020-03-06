@@ -12,7 +12,9 @@ class Portfolio(MethodView):
         """
         symbols = ["PTON", "FB"]
         ranges = ["3m", "3m"]
-        config = {"symbols": symbols, "ranges": ranges}
+        sectors = ["Basic Materials", "Communication Services", "Consumer Cyclical", "Consumer Defensive", "Energy", "Financial Services"]
+        allocations = [30, 10, 25, 25, 5, 5]
+        config = {"symbols": symbols, "ranges": ranges, "sectors": sectors, "allocations": allocations}
         messages = self.getTwits()
         return render_template(
             "portfolio.html",
