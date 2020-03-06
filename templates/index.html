@@ -36,7 +36,7 @@
       </table>
     </div>
     <!-- Savings Progress Bar -->
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <h5 class="text-center">Savings Progress</h5>
       <div class="progress active">
         <div class="progress-bar" role="progressbar"></div>
@@ -44,13 +44,15 @@
       <p class="savings-prog"></p>
       <p class="savings-text">saved of your <span class="savings-goal"></span> goal!</p>
     </div>
-    <div class="col-sm-4">
-      <h5 class="text-center">Stock Performance</h5>
+    <div class="col-sm-5">
+      <h5 class="text-center">Spending Breakdown</h5>
+        <div id="expenses_chart"></div>
+        <p class="text-center">TOTAL SPENT: <a id="spending_total"></a></p>
     </div>
   </div>
   <div class="row">
     <!-- Net Worth Summary -->
-    <div class="col-sm-8">
+    <div class="col-sm-7">
       <h5 class="text-center">Net Worth Summary</h5>
         <div class="row" id="chart_row">
           <div class="col-sm-4" id="net_worth_text">
@@ -91,8 +93,18 @@
           </div>
         </div>
     </div>
-    <div class="col-sm-4">
-      <h5 class="text-center">Debt Breakdown</h5>
+    <div class="col-sm-5">
+      <h6 class="text-center">Transactions (past 30 days)</h6>
+      <table class="table table-striped table-sm" id="transaction_table">
+        <thead>
+          <tr>
+            <th><strong>Date</strong></th>
+            <th><strong>Name</strong></th>
+            <th><strong>Category</strong></th>
+            <th><strong>Amount</strong></th>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
 </div>
@@ -143,6 +155,7 @@
 <script type="text/javascript">
   accounts = net_worth_calc({{accounts|tojson}})
   accounts = prog_bar({{accounts|tojson}})
+  transactions = spending_breakdown({{transactions|tojson}})
 </script>
 
 {% endblock %}
