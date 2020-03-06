@@ -93,19 +93,16 @@ function drawSectorsChart(sectorAllocations) {
       fontSize: 24
     },
     animation: {
-          duration: 500,
-          easing: "out",
-          startup: true
-        },
-        //needed for chart to take whole viewport
-        chartArea: {
-          width: "84%",
-          height: "90%"
-        },
-        width: "90%",
+      duration: 500,
+      easing: "out",
+      startup: true
+    },
+    //needed for chart to take whole viewport
+    chartArea: {
+      width: "84%",
+      height: "90%"
+    },
     pieHole: 0.5,
-    pieSliceText: "none",
-    legend: "none",
     slices: {
       0: {
         color: "#1c84c6"
