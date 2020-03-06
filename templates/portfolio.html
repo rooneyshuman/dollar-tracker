@@ -6,9 +6,10 @@
 {% block body %}
 <!-- Stock Prices Chart -->
 <div class="container-fluid gray-bg pt-2">
+  <h4 class="text-center">Investments</h4>
   <div class="row">
     {% for i in range(config_len) %}
-      <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6">
       <div class="card mx-auto border">
         <h5 class="card-title text-center font-weight-bold">{{ config["symbols"][i] }}</h5>
         <div class="card-body">
@@ -22,9 +23,9 @@
 <!-- Investment Sectors breakdown -->
 <div class="container-fluid gray-bg pt-2">
   <div class="row">
-      <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6 offset-md-3">
       <div class="card mx-auto border">
-        <h5 class="card-title text-center font-weight-bold">Investment Sectors Breakdown</h5>
+        <h5 class="card-title text-center font-weight-bold">Sectors Breakdown</h5>
         <div class="card-body">
           <div id="sectors_chart"></div>
         </div>
@@ -32,10 +33,11 @@
     </div>
   </div>
 </div>
-<!-- Stocktwits feed -->
 <div class="container-fluid gray-bg pt-3">
   <div class="row">
+    <!-- Stocktwits feed -->
     <div class="col-sm-12 col-md-6 pb-5">
+      <h4 class="text-center">Stocktwits Feed</h4>
       <div class="list-group">
         <!--TODO check for error codes-->
         {% for msg in messages %}
@@ -48,6 +50,22 @@
           <p class="mb-1">{{ msg["body"] }}</p>
           <span class="badge badge-info badge-pill">{{ msg["entities"]["sentiment"]["basic"] }}</span>
         </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- News feed -->
+    <div class="col-sm-12 col-md-6 pb-5">
+      <h4 class="text-center">News Feed</h4>
+      <div class="list-group">
+        <!--TODO check for error codes-->
+        {% for msg in news_messages %}
+        <a href="{{ msg["url"] }}" target="_blank" rel="noopener" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <p class="mb-1">{{ msg["headline"] }}</p>
+            <small>{{ msg["datetime"] }}</small>
+          </div>
+          <small>{{ msg["source"] }}</small>
+        </a>
         {% endfor %}
       </div>
     </div>
