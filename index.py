@@ -1,6 +1,7 @@
 from flask import render_template
 from flask.views import MethodView
 from settings import *
+import datetime
 
 
 class Index(MethodView):
@@ -10,7 +11,10 @@ class Index(MethodView):
         :return: renders the index.html page on return
         """
         accounts = self.get_account_data()
-        return render_template("index.html", page_name="Main", accounts=accounts)
+        transactions = self.get_transaction_data()
+        return render_template(
+            "index.html", page_name="Main", accounts=accounts, transactions=transactions
+        )
 
     def get_account_data(self):
         """
@@ -33,3 +37,31 @@ class Index(MethodView):
         ]
 
         return accounts
+
+    def get_transaction_data(self):
+        """
+        Returns list of dictionaries containing the following transaction data: name, amount, category, date
+        :return: list of retrieved transactions
+        """
+
+        # Retrive raw account data through Plaid's "Accounts" endpoint
+        # Pull transactions for the last 30 days
+        start_date = "{:%Y-%m-%d}".format(
+            datetime.datetime.now() + datetime.timedelta(-30)
+        )
+        end_date = "{:%Y-%m-%d}".format(datetime.datetime.now())
+        transactions_response = client.Transactions.get(
+            ACCESS_TOKEN, start_date, end_date
+        )
+
+        # Create dictionary with transactions' information
+        transactions = [
+            dict(
+                date=transaction["date"],
+                name=transaction["name"],
+                category=transaction["category"][0],
+                amount=transaction["amount"],
+            )
+            for transaction in transactions_response["transactions"]
+        ]
+        return transactions
