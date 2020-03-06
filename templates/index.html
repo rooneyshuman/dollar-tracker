@@ -6,7 +6,7 @@
 <!-- Welcome Header -->
 <div class="container-fluid">
   <div class="row dashboard-header white-bg">
-    <div class="col-md-3">
+    <div class="col-sm-12 text-center">
       <h2>Welcome</h2>
       <small>Your account information is below.</small>
     </div>
@@ -16,7 +16,7 @@
 <div class="container-fluid account-info white-bg">
   <div class="row">
     <!-- Account Balances -->
-    <div class="col-sm-4 col-md-4">
+    <div class="col-sm-12 col-md-4">
       <h5 class="text-center">Depository Account Balances</h5>
       <table class="table table-striped">
         <thead>
@@ -36,7 +36,7 @@
       </table>
     </div>
     <!-- Savings Progress Bar -->
-    <div class="col-sm-3">
+    <div class="col-sm-12 col-md-3">
       <h5 class="text-center">Savings Progress</h5>
       <div class="progress active">
         <div class="progress-bar" role="progressbar"></div>
@@ -44,7 +44,7 @@
       <p class="savings-prog"></p>
       <p class="savings-text">saved of your <span class="savings-goal"></span> goal!</p>
     </div>
-    <div class="col-sm-5">
+    <div class="col-md-5 col-sm-12">
       <h5 class="text-center">Spending Breakdown</h5>
         <div id="expenses_chart"></div>
         <p class="text-center">TOTAL SPENT: <a id="spending_total"></a></p>
@@ -52,24 +52,24 @@
   </div>
   <div class="row">
     <!-- Net Worth Summary -->
-    <div class="col-sm-7">
+    <div class="col-md-7 col-sm-12">
       <h5 class="text-center">Net Worth Summary</h5>
         <div class="row" id="chart_row">
-          <div class="col-sm-4" id="net_worth_text">
+          <div class="col-md-4 col-sm-12" id="net_worth_text">
             <h4>NET WORTH:</h4>
           </div>
-          <div class="col-sm-4">
+          <div class="col-md-4 col-sm-12">
             <div id="assets_chart"></div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-md-4 col-sm-12">
             <div id="liabilities_chart"></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4" id="net_worth_amt">
+          <div class="col-md-4 col-sm-6" id="net_worth_amt">
             <h4 id="net_worth_val"></h4>
           </div>
-          <div class="col-sm-4">
+          <div class="col-md-4 col-sm-6">
             <h7>TOTAL ASSETS: <a id="assets_total"></a></h7>
             <table class="table table-striped" id="asset_table">
               <thead>
@@ -93,7 +93,7 @@
           </div>
         </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-md-5 col-sm-12">
       <h6 class="text-center">Transactions (past 30 days)</h6>
       <table class="table table-striped table-sm" id="transaction_table">
         <thead>
