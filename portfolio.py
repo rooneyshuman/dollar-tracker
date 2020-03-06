@@ -6,8 +6,6 @@ from datetime import datetime
 
 
 class Portfolio(MethodView):
-
-
     def get(self):
         """
         GET method for portfolio page. config dict contains stocks to chart
@@ -16,9 +14,21 @@ class Portfolio(MethodView):
         """
         symbols = ["PTON", "FB"]
         ranges = ["3m", "3m"]
-        sectors = ["Basic Materials", "Communication Services", "Consumer Cyclical", "Consumer Defensive", "Energy", "Financial Services"]
+        sectors = [
+            "Basic Materials",
+            "Communication Services",
+            "Consumer Cyclical",
+            "Consumer Defensive",
+            "Energy",
+            "Financial Services",
+        ]
         allocations = [30, 10, 25, 25, 5, 5]
-        config = {"symbols": symbols, "ranges": ranges, "sectors": sectors, "allocations": allocations}
+        config = {
+            "symbols": symbols,
+            "ranges": ranges,
+            "sectors": sectors,
+            "allocations": allocations,
+        }
         messages = self.getTwits()
         news_messages = self.getNews()
         return render_template(
@@ -43,5 +53,7 @@ class Portfolio(MethodView):
         spy = Stock("SPY", token=IEX_KEY)
         allNews = spy.get_news()
         for news in allNews:
-            news['datetime'] = datetime.fromtimestamp(news['datetime']/1000).strftime("%m/%d/%Y")
+            news["datetime"] = datetime.fromtimestamp(news["datetime"] / 1000).strftime(
+                "%m/%d/%Y"
+            )
         return allNews
