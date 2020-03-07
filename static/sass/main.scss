@@ -14,7 +14,7 @@ $accent-color--gray: #5e5e5e;
 $border-color--gray: #e7eaec;
 $text-color--gray: #676a6c;
 
-
+// GENERAL ELEMENTS
 html {
   background-color: $background--gray;
   margin: 0;
@@ -58,8 +58,10 @@ h5 {
   font-size: 18px;
   line-height: 1.2;
   margin: 10px;
+  margin-bottom: 35px;
 }
 
+// NAVIGATION BAR (TOP) 
 .navbar-toggler {
   background-color: $brand-color--teal;
   padding: 4px 12px;
@@ -138,8 +140,10 @@ a:hover .nav-icon:before {
 .navbar.navbar-top {
   padding: 0;
   width: 100%;
+  border-bottom: 1px solid $border-color--gray;
 }
 
+// WELCOME HEADER 
 #dashboard-wrapper {
   padding: 0;
   position: relative;
@@ -178,10 +182,19 @@ a:hover .nav-icon:before {
   padding: 20px 20px 20px 50px;
 }
 
+// ACCOUNT BALANCES 
 .account-info {
   padding: 20px 20px 20px 50px;
 }
 
+.account-table {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 1%;
+  margin-left: 5%;
+}
+
+// DASHBOARD CONTENT (BOTTOM) 
 .dashboard-content {
   padding: 20px 10px 30px;
 }
@@ -207,9 +220,11 @@ a:hover .nav-icon:before {
 }
 
 .spending-icon {
-  font-size: 14px;
-  margin-left: 2px;
+  font-size: 20px;
+  height: 2em;
   color: $brand-color--teal;
+  filter: invert(66%) sepia(31%) saturate(3368%) hue-rotate(121deg) brightness(87%) contrast(80%);
+  margin-left: -5px;
 }
 
 .dashboard-col-content {
@@ -239,6 +254,7 @@ a:hover .nav-icon:before {
   height: 500px;
 }
 
+// FOOTER
 .footer {
   background: none repeat scroll 0 0 #fff;
   border-top: 1px solid $border-color--gray;
@@ -261,6 +277,7 @@ a:hover .nav-icon:before {
   padding-top: 16px;
 }
 
+// PORTFOLIO 
 .list-group {
   max-height: 400px;
   margin-bottom: 10px;
@@ -275,30 +292,47 @@ a:hover .nav-icon:before {
   border-radius: 50%;
 }
 
-// SAVINGS PROGRESS BAR STYLES
+// SAVINGS PROGRESS BAR
+.savings {
+  margin-top: 2%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .progress {
-  margin-top: 50px;
+  margin-top: 10px;
   height: 30px;
 }
 
 .progress-bar {
-  background-color: $accent-color--aqua;
+  background-color: $brand-color--teal;
 }
 
 .savings-prog,
 .savings-text {
+  margin-top: 45px;
   text-align: center;
+  font-family: 'ff-market-web', sans-serif;
+  font-size: 24px;
   font-weight: 400;
+  font-style: normal;
 }
 
 .savings-prog {
   margin-top: 30px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
-// NET WORTH STYLES
+a.savings-prog:hover {
+  color: $accent-color--blue;
+  font-size: 50px;
+  margin: 5px;
+  cursor: default;
+}
+
+// NET WORTH
 #chart_row {
-  height: 210px;
+  height: 250px;
 }
 
 #net_worth_text,
@@ -309,11 +343,35 @@ a:hover .nav-icon:before {
 #net_worth_val {
   font-weight: 400;
   font-size: 40px;
+  margin-top: 11px;
 }
 
 #net_worth_text>h4 {
   margin-top: 170px;
 }
+
+h5.section-title {
+  display: inline-block;
+  font-weight: 300;
+  margin: 10px;
+}
+
+h4.total-net-worth span {
+  position: relative;
+  padding-bottom: 7px;
+  text-transform: uppercase;
+}
+
+h4.total-net-worth span::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  // border-bottom: 2.5px solid $accent-color--blue;
+  content: "";
+}
+
 
 // SPENDING BREAKDOWN
 #expenses_chart {
@@ -324,10 +382,35 @@ a:hover .nav-icon:before {
   font-size: 12px;
 }
 
+.spending-breakdown {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.transactions {
+  margin-top: auto;
+  margin-bottom: 2%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+p.spending-text {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+p.spending-text a {
+  margin-left: 5px;
+}
+
+// NAVIGATION BAR 
 #wrapper {
   width: 100%;
   overflow-x: hidden;
   display: flex;
+  perspective: 1500px;
 }
 
 .nav {
@@ -337,6 +420,12 @@ a:hover .nav-icon:before {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+
+h4.navbar-brand a {
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .nav.menu>li {
@@ -365,10 +454,23 @@ a:hover .nav-icon:before {
   margin-top: -5px;
 }
 
+#sidebar {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 #sidebar.active {
   min-width: 60px;
   max-width: 60px;
   text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 #sidebar .sidebar-collapse div {
@@ -404,18 +506,12 @@ a:hover .nav-icon:before {
   display: none;
 }
 
-#menu-button {
-  transition: all 0.3s;
-}
-
 @media (min-width: 768px) {
   .navbar-static-side {
     z-index: 2001;
     width: 220px;
   }
-}
 
-@media (min-width: 768px) {
   #dashboard-wrapper {
     min-height: 100vh;
   }
@@ -425,7 +521,11 @@ a:hover .nav-icon:before {
   #sidebar.active {
     min-width: 60px;
     max-width: 60px;
-    margin-left: -60px !important;
+    // margin-left: -60px !important;
+  }
+
+  .navbar-static-side {
+    width: 220px;
   }
 
   #sidebar {
@@ -452,7 +552,7 @@ a:hover .nav-icon:before {
   #sidebar.active ul li a i {
     margin-right: 0px;
     display: block;
-    font-size: 1.8em;
+    font-size: 1.2em;
     margin-bottom: 5px;
   }
 }
