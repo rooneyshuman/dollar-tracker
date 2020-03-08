@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 function chartStocks() {
+  drawPortfolio();
   for (let i = 0; i < symbols.length; i++) {
     let chart = new google.visualization.CandlestickChart(
       document.getElementById(`chart-div-${i}`)
@@ -130,4 +131,47 @@ function drawSectorsChart(sectorAllocations) {
     document.getElementById("sectors_chart")
   );
   chart.draw(allocation_data, options);
+}
+
+function drawPortfolio(){
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'Gain'],
+    ['2010',  2],
+    ['2011',  3],
+    ['2012',  7],
+    ['2013',  4],
+    ['2014',  10],
+    ['2015',  16],
+    ['2016',  17],
+    ['2017',  10],
+    ['2018',  19],
+    ['2019',  23],
+    ['2020',  16]
+  ]);
+
+  var options = {
+    legend: "none",
+    titleTextStyle: {
+      fontSize: 24
+    },
+    animation: {
+      duration: 500,
+      easing: "out",
+      startup: true
+    },
+    //needed for chart to take whole viewport
+    chartArea: {
+      width: "84%",
+    },
+    hAxis: {
+      title: 'Year'
+    },
+    vAxis: {
+      title: "Percent Gain",
+      minValue: 0
+    }
+  };
+
+  var chart = new google.visualization.AreaChart(document.getElementById('portfolio-chart'));
+  chart.draw(data, options);
 }

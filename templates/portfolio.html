@@ -4,9 +4,95 @@
 {% endblock %}
 
 {% block body %}
+<!-- Overview -->
+<div class="container-fluid gray-bg pt-2">
+  <h4 class="text-center">Overview</h4>
+  <div class="row">
+    <div class="col-md-4 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center">$223,291.47</h3>
+          <p class="text-center">TOTAL BALANCE</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center">$2,544.33</h3>
+          <p class="text-center">TOTAL FEES</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center">$23,253.97</h3>
+          <p class="text-center">AVAILABLE CASH</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Holdings Chart -->
+<div class="container-fluid gray-bg pt-2">
+  <h4 class="text-center">Holdings</h4>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="card mx-auto border">
+        <h5 class="card-title text-center font-weight-bold">Portfolio Performance</h5>
+        <div class="card-body">
+          <div id="portfolio-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Company</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Value</th>
+                <th scope="col">Gain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Facebook (FB)</th>
+                <td>100</td>
+                <td>$18,534.23</td>
+                <td>-6.5%</td>
+              </tr>
+              <tr>
+                <th scope="row">Peloton (PTON)</th>
+                <td>563</td>
+                <td>$13,235.20</td>
+                <td>-10.34%</td>
+              </tr>
+              <tr>
+                <th scope="row">Netflix (NFLX)</th>
+                <td>34</td>
+                <td>$30,123.69</td>
+                <td>0.34%</td>
+              </tr>
+              <tr>
+                <th scope="row">SP500 (SPX)</th>
+                <td>2</td>
+                <td>$6,123.69</td>
+                <td>-10.53%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Stock Prices Chart -->
 <div class="container-fluid gray-bg pt-2">
-  <h4 class="text-center">Investments</h4>
+  <h4 class="text-center">Dashboard</h4>
   <div class="row">
     {% for i in range(config_len) %}
     <div class="col-sm-12 col-md-6">
