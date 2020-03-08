@@ -4,7 +4,6 @@ from index import Index
 from portfolio import Portfolio
 from settings_page import SettingsPage
 from confirmation import Confirmation
-# from email import Email
 from reset import Reset
 from unlock import Unlock
 from sassutils.wsgi import SassMiddleware
@@ -30,9 +29,6 @@ app.add_url_rule(
 app.add_url_rule(
     "/reset", view_func=Reset.as_view("reset"), methods=["GET"]
 )
-# app.add_url_rule(
-#     "/email", view_func=Email.as_view("email"), methods=["GET"]
-# )
 app.add_url_rule(
     "/unlock", view_func=Unlock.as_view("unlock"), methods=["GET"]
 )
