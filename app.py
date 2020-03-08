@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from index import Index
 from portfolio import Portfolio
+from settings_page import SettingsPage
 from sassutils.wsgi import SassMiddleware
 
 
@@ -15,6 +16,9 @@ app.wsgi_app = SassMiddleware(
 app.add_url_rule("/", view_func=Index.as_view("index"), methods=["GET"])
 app.add_url_rule(
     "/portfolio", view_func=Portfolio.as_view("portfolio"), methods=["GET"]
+)
+app.add_url_rule(
+    "/settings", view_func=SettingsPage.as_view("settings"), methods=["GET"]
 )
 
 if __name__ == "__main__":
