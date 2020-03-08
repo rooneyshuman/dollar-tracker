@@ -4,11 +4,20 @@
 {% endblock %}
 
 {% block body %}
-<!-- Overview -->
-<div class="container-fluid gray-bg pt-2">
-  <h5>Settings Page</h5>
+<!-- Settings -->
+<div class="container pt-2">
+  <!-- Change username and email -->
+  <div class="row">
+    <div class="col-sm-12 p-2">
+      <a href="{{url_for('reset')}}" class="btn btn-primary" role="button">Forgot your password?</a>
+    </div>
+    <div class="col-sm-12 p-2">
+{#      <a href="{{url_for('email')}}" class="btn btn-primary" role="button">Need to change your email?</a>#}
+      <a href="{{url_for('confirmation')}}" class="btn btn-primary" role="button">Didn't receive confirmation instructions?</a>
+    </div>
+    <div class="col-sm-12 p-2">
+      <a href="{{url_for('unlock')}}" class="btn btn-primary" role="button">Didn't receive unlock instructions?</a>
+    </div>
+  </div>
 </div>
-<!-- Google charts file -->
-{#<script type="text/javascript" src="{{url_for('static', filename='javascript/settings.js')}}"></script>#}
-
 {% endblock %}
