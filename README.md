@@ -103,4 +103,5 @@ Distributed under the MIT License. See [LICENSE.md](https://github.com/rooneyshu
 
 ## Acknowledgements
 * [README Inspiration](https://github.com/carissaallen/Best-README-Template)
+* [Bootstrap Sidebar](https://bootstrapious.com/p/bootstrap-sidebar) tutorial helped to create a partially collapsing sidebar
 * Design based on an example provided in the instructor's project description
