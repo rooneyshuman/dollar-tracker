@@ -26,11 +26,7 @@ app.add_url_rule(
 app.add_url_rule(
     "/confirmation", view_func=Confirmation.as_view("confirmation"), methods=["GET"]
 )
-app.add_url_rule(
-    "/reset", view_func=Reset.as_view("reset"), methods=["GET"]
-)
-app.add_url_rule(
-    "/unlock", view_func=Unlock.as_view("unlock"), methods=["GET"]
-)
+app.add_url_rule("/reset", view_func=Reset.as_view("reset"), methods=["GET"])
+app.add_url_rule("/unlock", view_func=Unlock.as_view("unlock"), methods=["GET"])
 if __name__ == "__main__":
     app.run(debug=True)

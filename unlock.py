@@ -8,8 +8,4 @@ class Unlock(MethodView):
         GET method for unlock page.
         :return: renders the reset.html page on return
         """
-        return render_template(
-            "unlock.html",
-            page_name="Resend Unlock Email"
-        )
-
+        return render_template("unlock.html", page_name="Resend Unlock Email")

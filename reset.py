@@ -8,8 +8,4 @@ class Reset(MethodView):
         GET method for reset page.
         :return: renders the reset.html page on return
         """
-        return render_template(
-            "reset.html",
-            page_name="Reset Password"
-        )
-
+        return render_template("reset.html", page_name="Reset Password")
