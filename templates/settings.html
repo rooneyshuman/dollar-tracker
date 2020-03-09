@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<!-- Settings -->
+<div class="container pt-4">
+  <!-- Change username and email -->
+  <div class="row">
+    <div class="col-sm-12 pt-2 pb-2">
+      <h2>Main User Settings</h2>
+      <a href="{{url_for('reset')}}" class="btn btn-secondary" role="button">Forgot your password?</a>
+      <a href="{{url_for('confirmation')}}" class="btn btn-secondary" role="button">Didn't receive confirmation instructions?</a>
+      <a href="{{url_for('unlock')}}" class="btn btn-secondary" role="button">Didn't receive unlock instructions?</a>
+    </div>
+  </div>
+</div>
+<!-- Field for changing keys-->
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>IEX Key</h2>
+      <form class="form">
+        <div class="form-group">
+          <label for="iex-key" class="sr-only">IEX Key</label>
+          <input type="text" class="form-control" id="iex-key" placeholder="pk_2d3798cff29b4669a4b6a4b0b41b2cf2">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Change key</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Field for stock symbols-->
+<div class="container pb-5 pt-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Symbols Tracked</h2>
+      <ul class="list-group">
+        <li class="list-group-item disabled">Facebook (FB)</li>
+        <li class="list-group-item">Peloton (PTON)</li>
+        <li class="list-group-item">SP500 (SPY)</li>
+        <a href="#" class="list-group-item list-group-item-action">Add More</a>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

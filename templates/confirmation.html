@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<!-- Settings -->
+<div class="container pt-2">
+  <!-- Change username -->
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <h2>Didn't Receive Confirmation Instructions?</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Resend confirmation email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll send a confirmation email</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
