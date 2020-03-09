@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
   google.charts.setOnLoadCallback(chartStocks);
 });
-
+//this function charts all the symbols passed from the html
 function chartStocks() {
   drawPortfolio();
   for (let i = 0; i < symbols.length; i++) {

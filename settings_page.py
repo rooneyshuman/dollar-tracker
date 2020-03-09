@@ -8,8 +8,4 @@ class SettingsPage(MethodView):
         GET method for settings page.
         :return: renders the settings.html page on return
         """
-        return render_template(
-            "settings.html",
-            page_name="Settings"
-        )
-
+        return render_template("settings.html", page_name="Settings")
