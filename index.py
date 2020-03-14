@@ -47,7 +47,7 @@ class Index(MethodView):
         # Retrive raw account data through Plaid's "Accounts" endpoint
         # Pull transactions for the last 30 days
         start_date = "{:%Y-%m-%d}".format(
-            datetime.datetime.now() + datetime.timedelta(-30)
+            datetime.datetime.now() + datetime.timedelta(-29)
         )
         end_date = "{:%Y-%m-%d}".format(datetime.datetime.now())
         transactions_response = client.Transactions.get(
